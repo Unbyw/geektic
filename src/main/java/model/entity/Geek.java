@@ -15,7 +15,7 @@ public class Geek {
 	}
 
 	
-	//Accessors
+	//get-set
 	public Long getId() {
 		return id;
 	}
