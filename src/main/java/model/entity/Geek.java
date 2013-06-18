@@ -1,20 +1,25 @@
 package model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Geek {
+	@Id
 	private Long id;
 	private String nickname;
-	private String firstname;
-	private String lastname;
-	private String mail;
-	private String imagepath;
-	private String score; //amount of like + dislike of the profil
+	private Interest interest;
+	private Sexe sexe;
 	
 	//Constructors
 	public Geek(){
+		this.id = getId();
+		this.nickname = getNickname();
+		this.interest = getInterest();
+		this.sexe = getSexe();
 		
 	}
 
-	
 	//get-set
 	public Long getId() {
 		return id;
@@ -32,46 +37,19 @@ public class Geek {
 		this.nickname = nickname;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public Interest getInterest() {
+		return interest;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setInterest(Interest interest) {
+		this.interest = interest;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public Sexe getSexe() {
+		return sexe;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setSexe(Sexe sexe) {
+		this.sexe = sexe;
 	}
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getImagepath() {
-		return imagepath;
-	}
-
-	public void setImagepath(String imagepath) {
-		this.imagepath = imagepath;
-	}
-
-	public String getScore() {
-		return score;
-	}
-
-	public void setScore(String score) {
-		this.score = score;
-	}
-	
-	
-	//Methods
 }
