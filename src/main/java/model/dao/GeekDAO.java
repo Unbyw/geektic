@@ -25,14 +25,15 @@ public class GeekDAO {
 	}
 	
 	public List<Geek> findbyInterest(String interest){
-		String request = "select * from geek where interest = 'interest' ";
+		String request = "select * from geek where interest = '"+ interest +"' ";
 		return em.createQuery(request, Geek.class).getResultList();
 	}
 	
 	
 	public List<Geek> findbySex(String sexe){
-		String request = "select * from geek where sexe = 'sexe' ";
+		String request = "select * from geek where sexe = '"+sexe+"' ";
 		return em.createQuery(request, Geek.class).getResultList();
 	}
+	
 	
 }
