@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 	private GeekDAO geekdao;
 
-
 	@Autowired
 	public GeekServices (GeekDAO geekdao)
 	{

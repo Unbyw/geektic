@@ -16,10 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 	@Controller
 	@RequestMapping("/")
-	public class IndexController {
+	public class SearchController {
 	
 	
-	public IndexController ()
+	public SearchController ()
 	{
 	}
 	
