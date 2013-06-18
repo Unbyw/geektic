@@ -4,6 +4,8 @@ import java.util.List;
 
 import model.dao.GeekDAO;
 import model.entity.Geek;
+import model.entity.Interest;
+import model.entity.Sexe;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,16 +31,16 @@ import org.springframework.transaction.annotation.Transactional;
 	return geekdao.findbyId(id);
 	}
 	
-	public List<Geek> getGeeksInterest(String interest){
-		return geekdao.findbyInterest(interest);
+	public List<Geek> getGeeksInterest(List<Interest> interests){
+		return geekdao.findbyInterest(interests);
 	}
 	
-	public List<Geek> getGeeksSex(String sexe){
-		return geekdao.findbySex(sexe);
+	public List<Geek> getGeeksSexe(Sexe sexe){
+		return geekdao.findbySexe(sexe);
 	}
 	
 	public Geek getGeeksPseudo(String nickname){
 		return geekdao.findbyNickname(nickname);
 	}
-
+	
 }

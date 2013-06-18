@@ -1,23 +1,35 @@
 package model.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Geek {
+
+
 	@Id
 	private Long id;
 	private String nickname;
-	private Interest interest;
+	private List<Interest> interests;
 	private Sexe sexe;
 	
 	//Constructors
 	public Geek(){
-		this.id = getId();
-		this.nickname = getNickname();
-		this.interest = getInterest();
-		this.sexe = getSexe();
-		
+	}
+
+	public Geek(Long id, String nickname, List<Interest> interests, Sexe sexe) {
+		this.id = id;
+		this.nickname = nickname;
+		this.interests = interests;
+		this.sexe = sexe;
+	}
+	
+	public Geek(String nickname, List<Interest> interests, Sexe sexe){
+		this.nickname = nickname;
+		this.interests = interests;
+		this.sexe = sexe;
 	}
 
 	//get-set
@@ -37,12 +49,12 @@ public class Geek {
 		this.nickname = nickname;
 	}
 
-	public Interest getInterest() {
-		return interest;
+	public List<Interest> getinterests() {
+		return interests;
 	}
 
-	public void setInterest(Interest interest) {
-		this.interest = interest;
+	public void setinterests(List<Interest> interests) {
+		this.interests = interests;
 	}
 
 	public Sexe getSexe() {
@@ -52,4 +64,6 @@ public class Geek {
 	public void setSexe(Sexe sexe) {
 		this.sexe = sexe;
 	}
+	
+	
 }
