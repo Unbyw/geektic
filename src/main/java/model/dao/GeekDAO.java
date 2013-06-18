@@ -33,7 +33,7 @@ public class GeekDAO {
 	}
 	
 	
-	public List<Geek> findbySexe(Sexe sexe){
+	public List<Geek> findbySexe(String sexe){
 		String request = "select * from geek where sexe = '"+sexe+"' ";
 		return em.createQuery(request, Geek.class).getResultList();
 	}

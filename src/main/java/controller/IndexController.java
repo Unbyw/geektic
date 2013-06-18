@@ -15,20 +15,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 	@Controller
-	@RequestMapping("/")
+	@RequestMapping("/spectacles")
 	public class IndexController {
+	@RequestMapping(method = RequestMethod.GET)
+	public String list(ModelMap model) {
+		return null;
 	
-	
-	public IndexController ()
-	{
 	}
 	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ModelAndView show(@PathVariable("id") Long spectacleId) {
+		return null;
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String show() {
-	
-	
-	
-	return "index";
 	}
 }

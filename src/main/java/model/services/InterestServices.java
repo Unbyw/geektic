@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 	@Transactional
 	public class InterestServices {
 
-	private InterestDAO interestdao;
+	private static InterestDAO interestdao;
 
 	@Autowired
 	public InterestServices (InterestDAO interestdao)
@@ -23,15 +23,15 @@ import org.springframework.transaction.annotation.Transactional;
 		this.interestdao = interestdao;
 	}
 
-	public List<Interest> getInterests(){
+	public List<Interest> findAll(){
 	return interestdao.findAll();
 	}
 
-	public Interest getInterest(Long id){
+	public Interest findbyId(Long id){
 	return interestdao.findbyId(id);
 	}
 
-	public Interest getInterestsLabel(String label){
+	public Interest findbyLabel(String label){
 		return interestdao.findbyLabel(label);
 	}
 }

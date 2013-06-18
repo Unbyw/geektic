@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 	@Transactional
 	public class GeekServices {
 
-	private GeekDAO geekdao;
+	private static GeekDAO geekdao;
 
 	@Autowired
 	public GeekServices (GeekDAO geekdao)
@@ -23,23 +23,23 @@ import org.springframework.transaction.annotation.Transactional;
 		this.geekdao = geekdao;
 	}
 
-	public List<Geek> getGeeks(){
+	public List<Geek> findAll(){
 	return geekdao.findAll();
 	}
 
-	public Geek getGeek(Long id){
+	public static Geek findbyId(Long id){
 	return geekdao.findbyId(id);
 	}
 	
-	public List<Geek> getGeeksInterest(List<Interest> interests){
+	public static List<Geek> findbyInterest(List<Interest> interests){
 		return geekdao.findbyInterest(interests);
 	}
 	
-	public List<Geek> getGeeksSexe(Sexe sexe){
+	public static List<Geek> findbySexe(String sexe){
 		return geekdao.findbySexe(sexe);
 	}
 	
-	public Geek getGeeksPseudo(String nickname){
+	public static Geek findbyNickname(String nickname){
 		return geekdao.findbyNickname(nickname);
 	}
 	
