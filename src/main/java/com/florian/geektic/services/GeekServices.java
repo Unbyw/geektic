@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.florian.geektic.dao.GeekDAO;
 import com.florian.geektic.entity.Geek;
 import com.florian.geektic.entity.Interest;
-import com.florian.geektic.entity.Sexe;
 
 	@Service
 	@Transactional

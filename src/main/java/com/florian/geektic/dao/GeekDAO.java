@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.florian.geektic.entity.Geek;
 import com.florian.geektic.entity.Interest;
-import com.florian.geektic.entity.Sexe;
 
 @Repository
 public class GeekDAO {
@@ -20,7 +19,7 @@ public class GeekDAO {
 	}
 	
 	public List<Geek> findAll(){
-		String request = "select g from geek g";	
+		String request = "select g from "+ Geek.class.getName() + " g";	
 		return em.createQuery(request, Geek.class).getResultList();
 	}
 	

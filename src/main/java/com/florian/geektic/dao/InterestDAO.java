@@ -4,12 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-
 import org.springframework.stereotype.Repository;
-
 import com.florian.geektic.entity.Interest;
-import com.florian.geektic.entity.Sexe;
+
 
 @Repository
 public class InterestDAO {

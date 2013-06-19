@@ -8,8 +8,11 @@
 </head>
 	<body>
 		<h1>Bienvenue sur geektic</h1>
-		
-		<c:forEach vars "geek"> </c:forEach>
+		<ul>
+			<c:forEach var="mygeeks" items = "${geeks}">
+				<li><c:out value ="${mygeeks.nickname}"/></li> 
+			</c:forEach>	
+		</ul>
 		<p></p>
 	</body>
 </html>

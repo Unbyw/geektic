@@ -10,7 +10,7 @@ public class Geek {
 	private Long id;
 	
 	private String nickname;
-	private Sexe sexe;
+	private String sexe;
 	private  Long nbview;
 	
 	@ManyToMany
@@ -26,14 +26,14 @@ public class Geek {
 	public Geek(){
 	}
 
-	public Geek(Long id, String nickname, List<Interest> interests, Sexe sexe) {
+	public Geek(Long id, String nickname, List<Interest> interests, String sexe) {
 		this.id = id;
 		this.nickname = nickname;
 		this.interests = interests;
 		this.sexe = sexe;
 	}
 	
-	public Geek(String nickname, List<Interest> interests, Sexe sexe){
+	public Geek(String nickname, List<Interest> interests, String sexe){
 		this.nickname = nickname;
 		this.interests = interests;
 		this.sexe = sexe;
@@ -56,11 +56,11 @@ public class Geek {
 		this.nickname = nickname;
 	}
 
-	public Sexe getSexe() {
+	public String getSexe() {
 		return sexe;
 	}
 
-	public void setSexe(Sexe sexe) {
+	public void setSexe(String sexe) {
 		this.sexe = sexe;
 	}
 
