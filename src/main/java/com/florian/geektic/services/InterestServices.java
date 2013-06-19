@@ -25,15 +25,15 @@ import com.florian.geektic.entity.Interest;
 		this.interestdao = interestdao;
 	}
 
-	public List<Interest> findAll(){
+	static public List<Interest> findAll(){
 	return interestdao.findAll();
 	}
 
-	public Interest findbyId(Long id){
+	static public Interest findbyId(Long id){
 	return interestdao.findbyId(id);
 	}
 
-	public Interest findbyLabel(String label){
+	static public Interest findbyLabel(String label){
 		return interestdao.findbyLabel(label);
 	}
 }

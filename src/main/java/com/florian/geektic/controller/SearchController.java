@@ -4,22 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.florian.geektic.services.GeekServices;
-
+import com.florian.geektic.services.InterestServices;
 
 @Controller
-@RequestMapping("/")
-public class IndexController{
-
-public IndexController() {
-}
-
+@RequestMapping("/search")
+public class SearchController {
+	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView listGeekAll(){
-		ModelAndView mav = new ModelAndView("listgeek");
-		mav.addObject("geeks", GeekServices.findAll());
+	public ModelAndView listInterestAll(){
+		ModelAndView mav = new ModelAndView("interests");
+		mav.addObject("interests", InterestServices.findAll());
 		return mav;
 	}
 }
-

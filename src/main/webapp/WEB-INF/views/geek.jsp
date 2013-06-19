@@ -4,16 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Insert title here</title>
+<title>Insert title here</title>
 </head>
-	<body>
-		<h1>Bienvenue sur geektic</h1>
-		<ul>
-			<c:forEach var="mygeeks" items = "${geeks}">
-				<li><c:out value ="${mygeeks.nickname}"/></li> 
-			</c:forEach>	
-		</ul>
-		
-		<p></p>
-	</body>
+<body>
+
+</body>
 </html>

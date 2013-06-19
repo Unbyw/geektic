@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
+
+import com.florian.geektic.entity.Geek;
 import com.florian.geektic.entity.Interest;
 
 
@@ -18,7 +20,7 @@ public class InterestDAO {
 	}
 	
 	public List<Interest> findAll(){
-		String request = "select from Interest";	
+		String request = "select i from "+ Interest.class.getName() + " i";	
 		return em.createQuery(request, Interest.class).getResultList();
 	}
 	

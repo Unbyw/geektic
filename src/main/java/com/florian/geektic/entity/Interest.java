@@ -13,6 +13,9 @@ public class Interest {
 	@ManyToMany(mappedBy="interests")
 	private List<Geek> geeks; 
 	
+	public Interest(){
+		
+	}
 	
 	public Interest(Long id, String label) {
 		this.id = id;

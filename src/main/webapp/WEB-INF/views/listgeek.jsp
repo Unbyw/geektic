@@ -13,7 +13,6 @@
 				<li><c:out value ="${mygeeks.nickname}"/></li> 
 			</c:forEach>	
 		</ul>
-		
 		<p></p>
 	</body>
 </html>
