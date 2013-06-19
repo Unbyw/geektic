@@ -29,22 +29,5 @@ public class InterestDAO {
 	public Interest findbyLabel(String label){
 		return em.find(Interest.class, label);		
 	}
-	public Object createInterest(String label){
-		Interest i;
-		i=em.find(Interest.class,findbyLabel(label));
-	    if(i!=null)
-	    {
-	        return null;
-	    }
-
-	    i = new Interest(label);
-	    
-	    em.getTransaction().begin();
-	    em.persist(i); 
-	    em.getTransaction().commit();
-	    em.close();
-
-	    return i;
-	}
 }
 

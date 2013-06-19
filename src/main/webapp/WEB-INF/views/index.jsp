@@ -7,7 +7,7 @@
 	<title>Insert title here</title>
 </head>
 	<body>
-		<h1>Spectacle - ${spectacle.titre}</h1>
-		<p>Spectacle créé par ${spectacle.auteur}</p>
+		<h1>Bienvenue sur geektic</h1>
+		<p></p>
 	</body>
 </html>

@@ -15,7 +15,7 @@ public class GeekDAO {
 	private EntityManager em; 
 	
 	public List<Geek> findAll(){
-		String request = "select from geek";	
+		String request = "select g from geek g";	
 		return em.createQuery(request, Geek.class).getResultList();
 	}
 	
@@ -27,32 +27,12 @@ public class GeekDAO {
 		return em.find(Geek.class, Nickname);		
 	}
 	
-	public List<Geek> findbyInterest(List<Interest> interests){
-		String request = "select * from geek where interest = '"+ interests +"' ";
-		return em.createQuery(request, Geek.class).getResultList();
-	}
-	
-	
-	public List<Geek> findbySexe(String sexe){
-		String request = "select * from geek where sexe = '"+sexe+"' ";
-		return em.createQuery(request, Geek.class).getResultList();
-	}
-	
-	public Object newGeek(String nickname, List<Interest> interests, Sexe sexe){
-		Geek g;
-		g=em.find(Geek.class,findbyNickname(nickname));
-	    if(g!=null)
-	    {
-	        return null;
-	    }
-
-	    g = new Geek(nickname, interests, sexe);
-	    
-	    em.getTransaction().begin();
-	    em.persist(g);
-	    em.getTransaction().commit();
-	    em.close();
-
-	    return g;
+	public List<Geek> findbyCriteria(Interest interest, String sexe){
+		String request = "select g from geek g join g.interests ci where ci.label LIKE :interest";
+					
+		return em.createQuery(request, Geek.class)
+		.setParameter("interests", "%"+ interest.getLabel() +"%")
+		.setParameter("sexe", sexe)
+		.getResultList();
 	}
 }

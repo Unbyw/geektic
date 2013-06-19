@@ -1,9 +1,8 @@
 package model.entity;
 
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.*;
+import javax.persistence.*;
 
 @Entity
 public class Geek {
@@ -11,9 +10,13 @@ public class Geek {
 
 	@Id
 	private Long id;
+	
 	private String nickname;
-	private List<Interest> interests;
 	private Sexe sexe;
+	private  Long nbview;
+	
+	@ManyToMany(mappedBy = "geeks")
+	private List<Interest> interests = new ArrayList<Interest>(0);
 	
 	//Constructors
 	public Geek(){
@@ -49,20 +52,28 @@ public class Geek {
 		this.nickname = nickname;
 	}
 
-	public List<Interest> getinterests() {
-		return interests;
-	}
-
-	public void setinterests(List<Interest> interests) {
-		this.interests = interests;
-	}
-
 	public Sexe getSexe() {
 		return sexe;
 	}
 
 	public void setSexe(Sexe sexe) {
 		this.sexe = sexe;
+	}
+
+	public List<Interest> getInterests() {
+		return interests;
+	}
+
+	public void setInterests(List<Interest> interests) {
+		this.interests = interests;
+	}
+
+	public Long getNbview() {
+		return nbview;
+	}
+
+	public void setNbview(Long nbview) {
+		this.nbview = nbview;
 	}
 	
 	

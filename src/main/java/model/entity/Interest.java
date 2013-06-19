@@ -1,7 +1,8 @@
 package model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.*;
+import javax.persistence.*;
+
 
 @Entity
 public class Interest {
@@ -9,7 +10,15 @@ public class Interest {
 	private Long id;
 	private String label;
 	
-	public Interest(){
+	@ManyToMany
+	@JoinColumn(name = "idgeek", nullable = false)
+	@JoinTable(
+	name = "GeeksInterests",
+	joinColumns = @JoinColumn(name = "IDCENTREINTERET"),
+	inverseJoinColumns = @JoinColumn(name = "IDGEEK")
+	)
+	private List<Geek> geeks = new ArrayList<Geek>(0);
+		public Interest(){
 		
 	}
 	

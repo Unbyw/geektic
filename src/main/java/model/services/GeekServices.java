@@ -31,16 +31,11 @@ import org.springframework.transaction.annotation.Transactional;
 	return geekdao.findbyId(id);
 	}
 	
-	public static List<Geek> findbyInterest(List<Interest> interests){
-		return geekdao.findbyInterest(interests);
-	}
-	
-	public static List<Geek> findbySexe(String sexe){
-		return geekdao.findbySexe(sexe);
+	public static List<Geek> findbyCriteria(Interest interests, String sexe){
+		return geekdao.findbyCriteria(interests, sexe);
 	}
 	
 	public static Geek findbyNickname(String nickname){
 		return geekdao.findbyNickname(nickname);
 	}
-	
 }
