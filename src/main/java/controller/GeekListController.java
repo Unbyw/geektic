@@ -28,18 +28,4 @@ import org.springframework.web.servlet.ModelAndView;
 	Geek geek = GeekServices.findbyId(id);
 	return geek;
 	}
-	
-	@RequestMapping(value = "/{nickname}", method = RequestMethod.GET)
-	@ResponseBody
-	public Geek ModelAndView(@PathVariable("nickname") String nickname) {
-	Geek geek = GeekServices.findbyNickname(nickname);
-	return geek;
-	}
-	
-	@RequestMapping(value = "/{sexe}", method = RequestMethod.GET)
-	@ResponseBody
-	public List<Geek> ModelAndView(@PathVariable("sexe") String sexe) {
-	List<Geek> geeks = GeekServices.findbySexe(sexe);
-	return geeks;
-	}
 }
