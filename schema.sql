@@ -12,13 +12,13 @@ Create table Geek(
 
 Create table Interest(
 	id Integer PRIMARY KEY,
-	nickname varchar(55)
+	label varchar(55)
 );
 
 Create table GeeksInterests(
 	idGeek Integer NOT NULL,
 	idInterest Integer NOT NULL,
-	primary key (idGeek, idInterest),
+	id primary key (idGeek, idInterest),
 	foreign key (idGeek) references Geek(id),
 	foreign key (idInterest) references Interest(id)
 );

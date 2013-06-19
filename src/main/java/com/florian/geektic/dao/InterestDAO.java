@@ -1,0 +1,36 @@
+package com.florian.geektic.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+
+import org.springframework.stereotype.Repository;
+
+import com.florian.geektic.entity.Interest;
+import com.florian.geektic.entity.Sexe;
+
+@Repository
+public class InterestDAO {
+	@PersistenceContext
+	private EntityManager em; 
+	
+	public InterestDAO(){
+		
+	}
+	
+	public List<Interest> findAll(){
+		String request = "select from Interest";	
+		return em.createQuery(request, Interest.class).getResultList();
+	}
+	
+	public Interest findbyId(long id){
+		return em.find(Interest.class, id);		
+	}
+	
+	public Interest findbyLabel(String label){
+		return em.find(Interest.class, label);		
+	}
+}
+

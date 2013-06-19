@@ -8,6 +8,8 @@
 </head>
 	<body>
 		<h1>Bienvenue sur geektic</h1>
+		
+		<c:forEach vars "geek"> </c:forEach>
 		<p></p>
 	</body>
 </html>
