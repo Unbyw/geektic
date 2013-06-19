@@ -7,13 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.florian.geektic.services.InterestServices;
 
 @Controller
-@RequestMapping("/search")
+@RequestMapping("search")
 public class SearchController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listInterestAll(){
-		ModelAndView mav = new ModelAndView("interests");
+		ModelAndView mav = new ModelAndView("search");
 		mav.addObject("interests", InterestServices.findAll());
 		return mav;
 	}
+	
+	
 }

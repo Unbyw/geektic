@@ -17,7 +17,7 @@ public IndexController() {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listGeekAll(){
-		ModelAndView mav = new ModelAndView("listgeek");
+		ModelAndView mav = new ModelAndView("index");
 		mav.addObject("geeks", GeekServices.findAll());
 		return mav;
 	}
