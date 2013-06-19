@@ -17,11 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 	@Controller
 	@RequestMapping("/")
 	public class IndexController {
-	@RequestMapping(method = RequestMethod.GET)
-	public String list(ModelMap model) {
-		return null;
-	
-	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView indexJSp(){
