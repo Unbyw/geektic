@@ -26,8 +26,5 @@ public class InterestDAO {
 		return em.find(Interest.class, id);		
 	}
 	
-	public Interest findbyLabel(String label){
-		return em.find(Interest.class, label);		
-	}
 }
 

@@ -13,16 +13,22 @@
 <body>
 	<h1>Bienvenue sur la recherche</h1>
 	<form method="post" action="search"> 
+		<label> Nickname:<Input type="text" name="nickname"></label>
 		<ul>
-			<c:forEach var="interests" items = "${interests}">
-				<li><c:out value ="${interests.label}"/><input type="radio" name="interest" value="${interests.id}"></li>
+			<c:forEach var="interest" items = "${interests}">
+				<li><c:out value ="${interest.label}"/><input type="checkbox" name="interest" value="${interest.id}"></li>
 			</c:forEach>	
 		</ul>
 		<ul>
-			<li>male<input type="checkbox" name ="sexe" value ="male"></li>
-			<li>female<input type="checkbox" name ="sexe" value ="female"></li>
-			<li>shemale<input type="checkbox" name ="sexe" value ="shemale"></li>
+			<li>Male<input type="checkbox" name ="sexe" value="male"></li>
+			<li>Female<input type="checkbox" name ="sexe" value="female"></li>
+			<li>Shemale<input type="checkbox" name ="sexe" value="shemale"></li>
 		</ul>
-	<input type="submit" value="Say Hello"/> </form>
+		<input type="submit" value="Say Hello"/> 
+	</form>
+	
+	<c:forEach var="geek" items = "${geeks}">
+		<li><c:out value ="${geek.nickname}"/></li>
+	</c:forEach>
 </body>
 </html>

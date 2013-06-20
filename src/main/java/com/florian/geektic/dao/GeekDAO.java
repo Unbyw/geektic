@@ -1,12 +1,11 @@
 package com.florian.geektic.dao;
 
-import java.util.List;
+import java.util.*;
 import javax.persistence.*;
 
 import org.springframework.stereotype.Repository;
 
 import com.florian.geektic.entity.Geek;
-import com.florian.geektic.entity.Interest;
 
 @Repository
 public class GeekDAO {
@@ -27,16 +26,29 @@ public class GeekDAO {
 		return em.find(Geek.class, id);		
 	}
 	
-	public Geek findbyNickname(String Nickname){
-		return em.find(Geek.class, Nickname);		
-	}
 	
-	public List<Geek> findbyCriteria(Interest interest, String sexe){
-		String request = "select g from geek g join g.interests ci where ci.label LIKE :interest and sexe like :sexe";
-					
+	public List<Geek> findbyCriteria(String nickname, ArrayList<Long> interests, ArrayList<String> sexes){
+		String request;
+		request = "select g from "+ Geek.class.getName() + " g join g.interests  ";
+		request += "where lower(g.nickname) like '"+nickname.toLowerCase()+"%' ";
+		if(!interests.isEmpty()){
+			request += "and interest in(";
+			for (Long interestId : interests){
+				request += "'"+interestId+"',";
+			}
+			request = request.substring(0, request.length() - 1);
+		}
+		
+		if(!sexes.isEmpty()){
+			request += "and sexe in(";
+			for (String sexe : sexes){
+				request += "'"+sexe+"',";
+			}
+			request = request.substring(0, request.length() - 1);
+		}
+			
 		return em.createQuery(request, Geek.class)
-		.setParameter("interests", "%'"+ interest.getLabel() +"'%")
-		.setParameter("sexe", "%'"+sexe+"'%")
 		.getResultList();
 	}
+
 }

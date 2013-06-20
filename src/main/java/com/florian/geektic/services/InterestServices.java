@@ -22,7 +22,7 @@ import com.florian.geektic.entity.Interest;
 	@Autowired
 	public InterestServices (InterestDAO interestdao)
 	{
-		this.interestdao = interestdao;
+		InterestServices.interestdao = interestdao;
 	}
 
 	static public List<Interest> findAll(){
@@ -33,7 +33,4 @@ import com.florian.geektic.entity.Interest;
 	return interestdao.findbyId(id);
 	}
 
-	static public Interest findbyLabel(String label){
-		return interestdao.findbyLabel(label);
-	}
 }

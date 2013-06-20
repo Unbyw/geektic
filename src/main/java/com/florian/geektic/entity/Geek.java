@@ -11,7 +11,7 @@ public class Geek {
 	
 	private String nickname;
 	private String sexe;
-	private  Long nbview;
+	private  Long score;
 	
 	@ManyToMany
     @JoinTable(name="GeeksInterests",
@@ -73,11 +73,11 @@ public class Geek {
 	}
 
 	public Long getNbview() {
-		return nbview;
+		return score;
 	}
 
 	public void setNbview(Long nbview) {
-		this.nbview = nbview;
+		this.score = nbview;
 	}
 	
 	
