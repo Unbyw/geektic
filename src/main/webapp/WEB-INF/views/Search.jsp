@@ -34,7 +34,7 @@
 			<li>Female<input type="checkbox" name ="sexes" value="female"></li>
 			<li>Shemale<input type="checkbox" name ="sexes" value="shemale"></li>
 		</ul>
-		<input type="submit" value="Say Hello"/> 
+		<input type="submit" value="Got milk?"/> 
 	</form>
 	
 	<c:forEach var="geek" items = "${geeks}">
