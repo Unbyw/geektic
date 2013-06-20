@@ -1,6 +1,7 @@
 package com.florian.geektic.services;
 
 import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +31,7 @@ import com.florian.geektic.entity.Geek;
 	return geekdao.findbyId(id);
 	}
 	
-	public static List<Geek> findbyCriteria(String nickname, ArrayList<Long> interests, ArrayList<String> sexes){
+	public static List<Geek> findbyCriteria(String nickname, Long[] interests,String[] sexes){
 		return geekdao.findbyCriteria(nickname, interests, sexes);
 	}
 	

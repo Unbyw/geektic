@@ -11,10 +11,10 @@ public class Geek {
 	
 	private String nickname;
 	private String sexe;
-	private  Long score;
+	private Long score;
 	
 	@ManyToMany
-    @JoinTable(name="GeeksInterests",
+    @JoinTable(name="GEEKS_INTERESTS",
         joinColumns=
             @JoinColumn(name="idGeek", referencedColumnName="ID"),
         inverseJoinColumns=

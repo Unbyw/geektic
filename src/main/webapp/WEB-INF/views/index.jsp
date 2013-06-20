@@ -3,28 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="/geektic/css/bootstrap.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap.min.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap-responsive.min.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/bootstrap.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/bootstrap-responsive.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css">
 <title>${pageTitle}</title>
 </head>
 	<body>
 	<section id="header">
 		<div id="nav-header">
 			<ul>
-				<li><a href="/geektic">Home</a></li>
-				<li><a href="/geektic/search">Search</a></li>
-				<li><a href="">Top Geek</a></li>
-				<li><a href="">Flop Geek</a></li>
+				<li><a href="<%=request.getContextPath()%>">Home</a></li>
+				<li><a href="<%=request.getContextPath()%>/search">Search</a></li>
+				<li><a href="<%=request.getContextPath()%>">Top Geek</a></li>
+				<li><a href="<%=request.getContextPath()%>">Flop Geek</a></li>
 			</ul>
 		</div>
 	</section>
 		<h1>Bienvenue sur geektic</h1>
-		<ul>
-			<c:forEach var="mygeeks" items = "${geeks}">
-				<li><c:out value ="${mygeeks.nickname}"/></li> 
-			</c:forEach>	
-		</ul>
 	</body>
 </html>

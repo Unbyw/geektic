@@ -3,32 +3,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="/geektic/css/bootstrap.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap.min.css">
-<link rel="stylesheet" href="/geektic/css/bootstrap-responsive.min.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/bootstrap.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/bootstrap-responsive.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<LINK rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap-responsive.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>${pageTitle}</title>
+<title>Geektic</title>
 </head>
 <body>
+	<section id="header">
+		<div id="nav-header">
+			<ul>
+				<li><a href="<%=request.getContextPath()%>">Home</a></li>
+				<li><a href="<%=request.getContextPath()%>/search">Search</a></li>
+				<li><a href="<%=request.getContextPath()%>">Top Geek</a></li>
+				<li><a href="<%=request.getContextPath()%>">Flop Geek</a></li>
+			</ul>
+		</div>
+	</section>
 	<h1>Bienvenue sur la recherche</h1>
 	<form method="post" action="search"> 
 		<label> Nickname:<Input type="text" name="nickname"></label>
 		<ul>
 			<c:forEach var="interest" items = "${interests}">
-				<li><c:out value ="${interest.label}"/><input type="checkbox" name="interest" value="${interest.id}"></li>
+				<li><c:out value ="${interest.label}"/><input type="checkbox" name="interests" value="${interest.id}"></li>
 			</c:forEach>	
 		</ul>
 		<ul>
-			<li>Male<input type="checkbox" name ="sexe" value="male"></li>
-			<li>Female<input type="checkbox" name ="sexe" value="female"></li>
-			<li>Shemale<input type="checkbox" name ="sexe" value="shemale"></li>
+			<li>Male<input type="checkbox" name ="sexes" value="male"></li>
+			<li>Female<input type="checkbox" name ="sexes" value="female"></li>
+			<li>Shemale<input type="checkbox" name ="sexes" value="shemale"></li>
 		</ul>
 		<input type="submit" value="Say Hello"/> 
 	</form>
 	
 	<c:forEach var="geek" items = "${geeks}">
-		<li><c:out value ="${geek.nickname}"/></li>
+		<li><a href="<%=request.getContextPath()%>/profile/${geek.id}"><c:out value ="${geek.nickname}"/></a></li>
 	</c:forEach>
 </body>
 </html>

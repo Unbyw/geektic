@@ -25,6 +25,5 @@ public class InterestDAO {
 	public Interest findbyId(long id){
 		return em.find(Interest.class, id);		
 	}
-	
 }
 
